@@ -10,17 +10,21 @@ interface HeaderProps {
   size?: 'small' | 'large';
 }
 
-const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => (
-  <Container size={size}>
-    <header>
-      <img src={Logo} alt="GoFinances" />
-      <nav>
-        {
-          // Todo
-        }
-      </nav>
-    </header>
-  </Container>
-);
+const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
+  // const actual route
+  return (
+    <Container size={size}>
+      <header>
+        <Link to="/">
+          <img src={Logo} alt="GoFinances" />
+        </Link>
+        <nav>
+          <Link to="/">Listagem</Link>
+          <Link to="/import">Importar</Link>
+        </nav>
+      </header>
+    </Container>
+  );
+};
 
 export default Header;
